@@ -59,3 +59,7 @@ function ComponentName() {
 ## why use this?
 - its the best way to mess with people just starting of with react
 - you are a Psychopath
+
+links: 
+- [github](https://github.com/xrehpicx/react-ugh)
+- [npm](https://www.npmjs.com/package/react-ugh)
