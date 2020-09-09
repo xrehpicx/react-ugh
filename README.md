@@ -1,8 +1,6 @@
 # react-ugh
 
-## react's useState but for the Psychopaths
-
-#
+### react's useState but for the Psychopaths
 
 ### install:
 ```
@@ -55,6 +53,44 @@ function ComponentName() {
 
 ```
 # 
+
+# Labels
+### Share state between components witout any parent wrappers or passing props
+```jsx
+function App() {
+    // state will be shared between Comp1 and Comp2
+  return (
+    <div className="App">
+      <Comp1 />
+      <Comp2 />
+    </div>
+  );
+}
+
+function Comp1() {
+
+  const state = useUgh({ counter: 0 }, null, "global-counter-label");
+  // useUgh(initial_state, validate, label)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      state.counter += 1;
+    }, 500);
+
+    return () => clearInterval(interval);
+  }, [state]);
+
+  return <h1>{state.counter}</h1>;
+}
+
+
+function Comp2() {
+    const state = useUgh({}, null, "global-counter-label");
+    // just give the same label as in Comp1 to share state and thats it
+    return <h1>{state.counter}</h1>;
+}
+```
+
 ## validate before updating state
 
 ```jsx
@@ -102,9 +138,9 @@ function ComponentName() {
 - type: function
 
 ```jsx
-const state = useUgh(state_initial_value, validate);
+const state = useUgh(state_initial_value, validate, label);
 // state_initial_value has to be an object
-// validate is explained below
+// other args are explained below
 ```
 ## validate
 validate holds all your validation functions for the properties in your state_initial_value
@@ -127,9 +163,13 @@ const state = useUgh(state_initial_value, validate);
 
 ```
 
+## label
+label holds an identifier using which you can get any state across components with no wrappers or passing any props from one component to the other
+- type: string
 
 ## why use this?
 - validation before state update
+- share state between components without caring about any wrappers or setup
 - you are a Psychopath
 
 links: 
