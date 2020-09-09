@@ -166,7 +166,7 @@ const state = useUgh(state_initial_value, validate);
 ## label
 label holds an identifier using which you can get any state across components with no wrappers or passing any props from one component to the other
 - type: string
-
+#
 ## why use this?
 - validation before state update
 - share state between components without caring about any wrappers or setup
