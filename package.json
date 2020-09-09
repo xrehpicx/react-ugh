@@ -1,0 +1,14 @@
+{
+  "name": "react-ugh",
+  "version": "1.0.1",
+  "description": "useState for Psychopaths",
+  "main": "use-ugh.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1"
+  },
+  "author": "xrehpicx",
+  "license": "ISC"
+}
