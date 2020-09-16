@@ -96,7 +96,7 @@ pass in custom validation functions for each individual property
 
 ```jsx
 import React, { useEffect } from "react";
-import { useUgh } from "react-ugh";
+import useUgh from "react-ugh";
 
 function ComponentName() {
     
