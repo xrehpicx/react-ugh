@@ -1,6 +1,6 @@
 {
   "name": "react-ugh",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "useState for Psychopaths",
   "main": "use-ugh.js",
   "scripts": {
