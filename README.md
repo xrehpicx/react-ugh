@@ -8,7 +8,7 @@ npm i react-ugh
 ```
 #
 
-## example with useState:
+## example without react-ugh:
 ```javascript
 import React, { useState, useEffect } from "react";
 
@@ -69,7 +69,7 @@ function App() {
 
 function Comp1() {
 
-  const state = useUgh({ counter: 0 }, null, "global-counter-label");
+  const state = useUgh({ counter: 0 }, "global-counter-label");
   // useUgh(initial_state, validate, label)
 
   useEffect(() => {
@@ -85,13 +85,14 @@ function Comp1() {
 
 
 function Comp2() {
-    const state = useUgh({}, null, "global-counter-label");
+    const state = useUgh("global-counter-label");
     // just give the same label as in Comp1 to share state and thats it
     return <h1>{state.counter}</h1>;
 }
 ```
 
 ## validate before updating state
+pass in custom validation functions for each individual property
 
 ```jsx
 import React, { useEffect } from "react";
@@ -111,13 +112,13 @@ function ComponentName() {
         else return "0";
     }
 
-    const state = useUgh(
-        { counter: 0, counter_but_in_string: "0" },
-        {
-            counter: validateCount,
-            counter_but_in_string: counter_but_in_string_validator,
-        }
-    );
+    const validator = {
+      counter: validateCount,
+      counter_but_in_string:counter_but_in_string_validator,
+    }
+
+    // validator object can be defined only while defining the state
+    const state = useUgh({ counter: 0, counter_but_in_string: "0" }, validator);
 
     useEffect(() => {
         const interval = setInterval(() => {

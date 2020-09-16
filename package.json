@@ -1,6 +1,6 @@
 {
   "name": "react-ugh",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "useState for Psychopaths",
   "main": "use-ugh.js",
   "scripts": {
@@ -10,12 +10,15 @@
     "react": "^16.13.1"
   },
   "repository": {
-      "type": "git",
-      "url": "https://github.com/xrehpicx/react-ugh.git"
-    },
+    "type": "git",
+    "url": "https://github.com/xrehpicx/react-ugh.git"
+  },
   "author": "xrehpicx",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/xrehpicx/react-ugh/issues"
+  },
+  "dependencies": {
+    "uuid": "^8.3.0"
   }
 }
