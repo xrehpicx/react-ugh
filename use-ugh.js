@@ -1,7 +1,6 @@
 import { v1 } from 'uuid';
 import { useState, useRef } from 'react'
 
-
 const states = {};
 export default function useUgh(state = {}, label, validation) {
     if (typeof label === 'object') {
